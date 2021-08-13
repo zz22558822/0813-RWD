@@ -1,0 +1,401 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 套用box高度鎖死 */
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+/* 讓圖片自適應容器最大寬度 高度自動 */
+img{
+    max-width: 100%;
+    height: auto;
+}
+/*---------------------------------------*/
+
+
+
+/* 全域設定 */
+body{
+	font-family: MicrosoftJhengHeiRegular;
+}
+.wrap{
+	max-width: 1024px;
+	margin: 0 auto;
+	background: #efe9e7;
+	position: relative;
+	/* 隱藏多餘防止破版的list-feature-border */
+	overflow: hidden;
+}
+.wrap a{
+	text-decoration: none;
+}
+/* 表頭 */
+.header{
+	width: 100%;
+	position: absolute;
+}
+.menu{
+	display: flex;
+	justify-content: space-between;
+	background: #000;
+	padding-right: 14px;
+	width: 100%;
+}
+.menu h1 a{
+	width: 180px;
+	height: 56px;
+	background: url(../images/logo_w.svg);
+
+	/* 圖片代替文字 */
+	display: block; /*a轉區塊*/
+	text-indent: 101%;/*縮排101%讓h1超出區塊*/
+	overflow: hidden;/*隱藏超出內容*/
+	white-space: nowrap;/*讓文字不自動換行*/
+	background-repeat: no-repeat;/*讓圖片不重複*/
+	background-position: center;/*讓圖片對齊中心*/
+}
+.menu ul{
+	display: flex;
+	align-items: center;
+}
+.menu li a{
+	display: block;
+	color: #FFF;
+	padding: 16px;
+	transition: all 0.3s;
+}
+.menu li a:hover{
+	background: orange;
+	color: #000;
+}
+
+.hamburger-menu{
+	display: none;
+}
+
+
+/* 表尾 */
+.footer{
+	display: flex;
+	justify-content: space-around;
+	color: #3D1101;
+	line-height: 1.3em;
+	padding: 40px;
+}
+.footer-about,.footer-info,.footer-logo{
+	width: 30%;
+}
+.footer .footer-info li,
+.footer .footer-info li a{
+	color: #3D1101;
+	list-style: outside;
+}
+.footer h3{
+	font-size: 24px;
+	padding-bottom: 16px;
+}
+
+.footer-logo{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: flex-end;
+}
+.footer-logo > a{
+	transition: all 0.3s;
+}
+.footer-logo > a:hover{
+	transform: scale(1.1);
+}
+.footer-sns{
+	display: flex;
+}
+.footer-sns li{
+	margin: 5px;
+	font-size: 20px;
+}
+.fa-google-plus-square{
+	color: #DB4437;
+	transition: all 0.2s;
+}
+.fa-google-plus-square:hover{
+	transform:rotate(360deg);
+}
+.fa-twitter-square{
+	color: #41ABE1;
+	transition: all 0.2s;
+}
+.fa-twitter-square:hover{
+	transform:rotate(360deg);
+}
+.fa-facebook-square{
+	color: #3A5795;
+	transition: all 0.2s;
+}
+.fa-facebook-square:hover{
+	transform:rotate(360deg);
+}
+
+/* TOP按鈕 */
+.top-btn i{
+	position: fixed;
+	bottom: 3%;
+	right: 1.5%;
+	color: orange;
+	opacity: 0.6;
+	transition: all 0.5s;
+	z-index: 100;
+}
+.top-btn i:hover{
+	color: orangered;
+}
+
+
+/* 橫幅展示區 */
+.banner{
+	background: url(../images/header_desktop.png);
+	height: 420px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.banner-text{
+	color: #FFF;
+	background: rgb(0, 0, 0, 0.4);
+	text-align: center;
+	line-height: 1.5em;
+	padding: 30px 32px;
+}
+.banner-text p{
+	padding-top: 20px;
+}
+.banner-text h2{
+	line-height: 1.1em;
+	font-size: 36px;
+}
+
+/* 容器區 */
+/* 特色列表 */
+.list-feature{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 50px 0;
+	color: #3D1101;
+}
+.list-feature h2{
+	font-size: 20px;
+	text-align: center;
+	line-height: 32px;
+	padding: 6px 12px;
+
+	/* 使用背景以及z-index來覆蓋多於的list-feature-border */
+	background: #efe9e7;
+	z-index: 2;
+}
+.list-feature h3{
+	font-size: 18px;
+	text-align: center;
+	padding: 10px;
+}
+.list-feature ul{
+	display: flex;
+	justify-content: space-evenly;
+	margin-top: 25px;
+}
+.list-feature ul li{
+	width: 25%;
+}
+.list-feature li > a{
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+	transition: all 0.3s;
+}
+.list-feature li > a:hover{
+	transform: scale(1.1);
+}
+/* 裝飾線條 使用絕對定位 */
+.container{
+	position: relative;
+}
+.list-feature-border{
+	position: absolute;
+	top: 90px;
+	border-top: 1px solid #979797;
+	width: 461px;
+	height: 1px;
+
+}
+
+/* 主廚區 */
+.Chef{
+	display: flex;
+	justify-content: space-evenly;
+	color: #FFF;
+	background: #3D1101;
+}
+.Chef-info{
+	width: 42%;
+	padding: 80px 10px;
+}
+.Chef-info h2{
+	font-size: 20px;
+	line-height: 32px;
+	padding-bottom: 16px;
+}
+.Chef-info span{
+	font-size: 16px;
+}
+.Chef-info p{
+	line-height: 1.5em;
+}
+/* 防止圖片變形 */
+.Chef img{
+	width: 50%;
+	object-fit: cover;
+}
+
+
+/* 感想區 */
+.opinion{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	color: #3D1101;
+	padding: 50px 0;
+}
+.opinion h2{
+	font-size: 24px;
+}
+.opinion ul{
+	display: flex;
+	justify-content: space-evenly;
+	padding-top: 36px;
+}
+.opinion ul li{
+	display: flex;
+	align-items: start;
+	width: 30%;
+}
+.opinion h3{
+	padding: 22px 0;
+}
+.opinion span{
+	display: block;
+	text-align: right;
+	padding-top: 16px;
+}
+.opinion img{
+	margin-right: 13px;
+}
+
+
+/* 地圖區 */
+.map{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #FFF;
+	padding: 50px 0;
+}
+.map-form{
+	display: flex;
+	justify-content: space-evenly;
+	padding-top: 30px;
+	width: 100%;
+}
+.map-form form{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 45%;
+}
+.map-form img{
+	width: 45%;
+	object-fit: cover;
+}
+.map-form label{
+	color: #3D1101;
+}
+.map-form input{
+	padding: 5px 14px;
+}
+.map-form-vegetarian .no{
+	padding-left: 36px;
+}
+.button{
+	display: flex;
+	justify-content: flex-end;
+	margin: 36px 0 0 0;
+}
+.button input{
+	padding: 6px 19px;
+	color: #FFF;
+	border-radius: 3px;
+	transition: all 0.2s;
+}
+.button input:hover{
+	opacity: 0.8;
+}
+.pure-button.pure-button-no{
+	background: rgb(0, 0, 0, 0.35);
+	margin-bottom: 0;
+}
+.pure-button.pure-button-yes{
+	background: #F56C23;
+	margin: 0 0 0 11px;
+}
+
+
+
+
+/* 用圓角遮蔽背景灰色 */
+.list-feature img,.opinion img{
+	border-radius: 50%;
+}
+.lb-outerContainer .lb-container img{
+	border-radius: 50%;
+}
+
