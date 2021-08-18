@@ -14,4 +14,16 @@ $(document).ready(function () {
     },350);
     });
 
+    // 漢堡選單
+    $('.hamburger-menu a').click(function (e) { 
+        e.preventDefault();
+        $(this).toggleClass('fa-bars').toggleClass('fa-times').parent().siblings('.menu').toggleClass('menu-open')
+    });
+
+    // 愛心按鈕
+    $('.fa-heart').click(function (e) { 
+        e.preventDefault();
+        $(this).toggleClass('fas').toggleClass('far')
+    });
+
 });
