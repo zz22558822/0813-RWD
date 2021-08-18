@@ -883,6 +883,10 @@ img{
 	padding: 3px;
 	transition: all 0.2s;
 }
+.pure-button.pure-button-cart.select{
+	color: #FFF;
+	background: #FF5E45;
+}
 .pure-button.pure-button-cart:hover{
 	color: #FFF;
 	background: #FF5E45;

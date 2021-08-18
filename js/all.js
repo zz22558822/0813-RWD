@@ -26,4 +26,10 @@ $(document).ready(function () {
         $(this).toggleClass('fas').toggleClass('far')
     });
 
+    // 加入購物車
+    $('.pure-button').click(function (e) { 
+        e.preventDefault();
+        $(this).toggleClass('select')
+    });
+
 });
