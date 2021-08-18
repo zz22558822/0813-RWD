@@ -27,7 +27,7 @@ $(document).ready(function () {
     });
 
     // 加入購物車
-    $('.pure-button').click(function (e) { 
+    $('.pure-button-cart').click(function (e) { 
         e.preventDefault();
         $(this).toggleClass('select')
     });
